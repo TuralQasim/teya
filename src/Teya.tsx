@@ -1,4 +1,4 @@
-import VideoPlayer from "./VideoPlayer";
+import VideoPlayer from "./components/VideoPlayer";
 import logo from "./icons/logo.svg";
 import HallTextContent from "./components/HallTextContent";
 import HallSlider from "./components/HallSlider";
