@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import video from "./video/video.mp4";
+import video from "../video/video.mp4";
 
 function VideoPlayer() {
   const videoRef = useRef<HTMLVideoElement | null>(null);

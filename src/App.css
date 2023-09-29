@@ -339,3 +339,142 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
+.other_bg {
+  padding: 30px 0;
+  background-color: #111111;
+  margin-bottom: 20px;
+}
+.other {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.other h2 {
+  font-family: "Gilroy";
+  font-size: 148px;
+  font-weight: 500;
+  line-height: 192px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #fff;
+  position: relative;
+}
+.other p {
+  font-family: "Gilroy";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 31px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  max-width: 368px;
+  color: #fff;
+}
+
+.zone {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 40px 0;
+  width: 100%;
+}
+.zone_reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 30px 0;
+  width: 100%;
+}
+.zone_text {
+  width: 43%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.zone_text h2 {
+  font-family: "Gilroy";
+  font-size: 92px;
+  font-weight: 500;
+  line-height: 120px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #111111;
+  position: relative;
+}
+.zone_text h2 span {
+  position: absolute;
+  font-family: "Gilroy";
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 31px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #111111;
+  top: 20px;
+  right: -165px;
+}
+.zone_text p {
+  font-family: "Gilroy";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #111111;
+}
+.zone_images {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.zone_images img {
+  width: calc((100% - 10px) / 2);
+  aspect-ratio: 1/1;
+}
+.animated-text-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.animated-title {
+  white-space: nowrap;
+  font-family: "Gilroy";
+  font-size: 148px;
+  font-weight: 500;
+  line-height: 148px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #111111;
+  animation: scrollText 20s linear infinite;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.dote {
+  width: 20px;
+  height: 20px;
+  background-color: #111111;
+  border-radius: 50%;
+  transform: translateY(-30px) !important;
+}
+
+.play{
+  width: 100%;
+  height: 846px;
+  position: relative;
+  background-image:url('./images/play/play1.png');
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}

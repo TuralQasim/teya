@@ -13,7 +13,7 @@ const HallSlider: React.FC<HallSliderType> = ({ arr }) => {
   return (
     <div className="hall_slider">
       <div className="main_img">
-        <img src={currentImg} alt="" />
+        <img loading="lazy" src={currentImg} alt="" />
       </div>
       <div className="other_images">
         {arr.map((a, b) => {

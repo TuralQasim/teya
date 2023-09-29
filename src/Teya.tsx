@@ -33,11 +33,20 @@ import loft3 from "./images/loft/loft3.png";
 import loft4 from "./images/loft/loft4.png";
 import loft5 from "./images/loft/loft5.png";
 import loft6 from "./images/loft/loft6.png";
+import zone1 from "./images/zone/zone1.png";
+import zone2 from "./images/zone/zone2.png";
+import zone3 from "./images/zone/zone3.png";
+import zone4 from "./images/zone/zone4.png";
+import zone5 from "./images/zone/zone5.png";
+import zone6 from "./images/zone/zone6.png";
 
 import HallTextRain from "./components/HallTextRain";
 import HallTextCikloma from "./components/HallTextCikloma";
 import HallTextInteryer from "./components/HallTextInteryer";
 import HallTextLoft from "./components/HallTextLoft";
+import Zone from "./components/Zone";
+import AnimatedTitle from "./components/AnimatedTitle";
+import Play from "./components/Play";
 function Teya() {
   const imgArr: string[] = [img1, img2, img3, img4, img5, img6];
   const imgArr2: string[] = [rain1, rain2, rain3, rain4, rain5, rain6];
@@ -61,7 +70,7 @@ function Teya() {
   return (
     <>
       <div className="hero">
-        <VideoPlayer />
+        {/* <VideoPlayer /> */}
         <div className="hero_text_bg">
           <div className="container">
             <div className="hero_text">
@@ -140,8 +149,50 @@ function Teya() {
       </div>
       <div className="other_bg">
         <div className="container">
-          <div className="other"></div>
+          <div className="other">
+            <h2>другие зоны</h2>
+            <p>
+              Кроме залов мы оборудовали студию другими необходимыми зонами для
+              вашего комфорта
+            </p>
+          </div>
         </div>
+      </div>
+      <div className="container">
+        <Zone
+          content=""
+          h2="гримерная"
+          p="Два рабочих места со всем необходимым. Есть отпариватель, утюг и рейлы для одежды. "
+          reverse={false}
+          image1={zone1}
+          image2={zone2}
+        />
+        <Zone
+          content="(для взрослых)"
+          h2="гардероб"
+          p="Можно воспользоваться прокатом одежды, обуви и аксессуаров на базе студии. "
+          reverse={true}
+          image3={zone3}
+          image4={zone4}
+        />
+        <Zone
+          content="(для детей)"
+          h2="гардероб"
+          p="Доступны в прокат платья для девочек разных возрастов."
+          reverse={false}
+          image5={zone5}
+          image6={zone6}
+        />
+        <div className="line"></div>
+      </div>
+      <AnimatedTitle text="творческое пространство посмотрите рум-тур" />
+      <div className="container">
+        <div className="line"></div>
+      </div>
+      <AnimatedTitle text="как устроена фотостудия «тейя»" />
+      <div className="container">
+        <div className="line"></div>
+        <Play />
       </div>
     </>
   );
