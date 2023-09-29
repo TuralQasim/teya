@@ -47,6 +47,7 @@ import HallTextLoft from "./components/HallTextLoft";
 import Zone from "./components/Zone";
 import AnimatedTitle from "./components/AnimatedTitle";
 import Play from "./components/Play";
+import BookBtn from "./components/BookBtn";
 function Teya() {
   const imgArr: string[] = [img1, img2, img3, img4, img5, img6];
   const imgArr2: string[] = [rain1, rain2, rain3, rain4, rain5, rain6];
@@ -69,8 +70,8 @@ function Teya() {
   const imgArr5: string[] = [loft1, loft2, loft3, loft4, loft5, loft6];
   return (
     <>
-      <div className="hero">
-        {/* <VideoPlayer /> */}
+      {/* <div className="hero">
+        <VideoPlayer />
         <div className="hero_text_bg">
           <div className="container">
             <div className="hero_text">
@@ -189,10 +190,78 @@ function Teya() {
       <div className="container">
         <div className="line"></div>
       </div>
-      <AnimatedTitle text="как устроена фотостудия «тейя»" />
+      <AnimatedTitle text="как устроена фотостудия «тейя»" /> */}
+      {/* <div className="container">
+        <div className="line"></div>
+        <Play name="play" />
+        <div className="equipment">
+          <div className="equipment_text">
+            <h2>оборудование</h2>
+            <ul>
+              <li>Импульсные источники 6 шт </li>
+              <li>Постоянный свет 4 шт </li>
+              <li>RGB (Цветной свет) 4 шт</li>
+              <li>Радиосинхронизатор цифровой 2шт </li>
+              <li>Радиосинхронизатор механический 1 шт</li>
+              <li>Стойки для оборудования 17шт </li>
+              <li>Комплект стоек для цветного фона и баннеров - 1шт </li>
+              <li>Журавль, систенд, пантограф </li>
+            </ul>
+            <div className="equipment_bottom">
+              <ul>
+                <li>Маски Гобо </li>
+                <li>Цветные фильтры (шторки, гелевые, стекла)</li>
+                <li>Шторки с сотами 2 шт </li>
+                <li>Рефлекторы 7 шт </li>
+                <li>Фоновый рефлектор 1 шт </li>
+                <li>Портретная тарелка 2 шт </li>
+                <li>Стрипбокс с сотами 4шт </li>
+                <li>Софтбокс 1шт </li>
+                <li>Октобокс 2 шт </li>
+                <li>Отражатель на просвет 5 в 1 — 1 шт</li>
+                <li>Зонты 3шт</li>
+                <li>Флаги 4 шт</li>
+              </ul>
+              <ul>
+                <li>Генератор дыма 2 шт </li>
+                <li>Лазер 1шт </li>
+                <li>Проектор 1шт</li>
+                <li>Вентилятор напольный 1шт </li>
+                <li>Жидкое зеркало и дискошар </li>
+                <li>Цветные фоны (зелёный, желтый, розовый, голубой)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="base">
+          <h2 className="base_title">
+            Так же на базе студии на постоянной основе проходят:
+          </h2>
+          <ul className="base_items">
+            <li>Занятия в модельной школе для взрослых</li>
+            <li>Занятия детской модельной школы</li>
+            <li>мастер-классы по рисованию на мольбертах 1500₽/чел.</li>
+            <li>Мастер-классы по декору от 1000₽/человек</li>
+            <li>Воркшопы для фотографов и видеографов</li>
+            <li>Дни открытых дверей</li>
+          </ul>
+        </div>
+        <div className="line"></div>
+      </div> */}
+      {/* <AnimatedTitle text="видео с открытия студии как это было" /> */}
       <div className="container">
         <div className="line"></div>
-        <Play />
+        <Play name="play2" />
+        <h2 className="promotion_title">акции</h2>
+        <div className="promotion_subtitle">
+          <h3>
+            На первое посещение студии скидка 50% по промокоду{" "}
+            <span>«ВОДОЛЕЙ»</span>
+          </h3>
+          <button className="book_btn_white">
+            забронировать <img src={arrow} alt="" />
+          </button>
+        </div>
       </div>
     </>
   );
