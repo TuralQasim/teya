@@ -1,3 +1,24 @@
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy"), url("./fonts/Gilroy-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy"), url("./fonts/Gilroy-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy"), url("./fonts/Gilroy-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy"), url("./fonts/Gilroy-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,3 +32,310 @@
   margin: 0 auto;
 }
 
+body {
+  background-color: #fff;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero .hero_text_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+}
+.hero_text_bg .container {
+  height: 100%;
+}
+.hero_text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  margin-top: 40px;
+}
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  align-items: center;
+}
+.navbar li a {
+  font-family: "Gilroy";
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #fff;
+}
+.phone {
+  font-family: "Gilroy";
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 42px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #fff;
+}
+.book {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.book_text {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: #fff;
+}
+.book_text p {
+  font-family: "Gilroy";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #fff;
+}
+.book_text h1 {
+  font-family: "Gilroy";
+  font-size: 96px;
+  font-weight: 500;
+  line-height: 85px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #fff;
+}
+.book_btn_white {
+  margin-right: auto;
+  margin-left: auto;
+  font-family: "Gilroy";
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 47px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 100px;
+  padding: 7px 30px;
+  cursor: pointer;
+}
+.book_btn {
+  margin-right: auto;
+  font-family: "Gilroy";
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 47px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #111111;
+  background-color: transparent;
+  border: 1px solid #111111;
+  border-radius: 100px;
+  padding: 7px 30px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+.halls {
+  margin-top: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.halls h2 {
+  font-family: "Gilroy";
+  font-size: 148px;
+  font-weight: 500;
+  line-height: 192px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #111111;
+  position: relative;
+}
+.halls h2:after {
+  content: "(5)";
+  position: absolute;
+  top: 55px;
+  right: -40px;
+  font-family: "Gilroy";
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 47px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #111111;
+}
+.halls p {
+  font-family: "Gilroy";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 31px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  max-width: 560px;
+  color: #111111;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #111111;
+  margin: 50px 0;
+}
+
+.hall_hero {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.hall_text {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.hall_slider {
+  width: 50%;
+}
+.hall_text h2 {
+  font-family: "Gilroy";
+  font-size: 92px;
+  font-weight: 500;
+  line-height: 120px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #111111;
+}
+.hall_text p {
+  font-family: "Gilroy";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #111111;
+  margin: 15px 0;
+}
+.hall_text p span {
+  font-family: "Gilroy";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #111111;
+}
+.with_dot {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+.with_dot li {
+  padding-left: 12px;
+  font-family: "Gilroy";
+  position: relative;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #111111;
+}
+.with_dot li::after {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #111111;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.without_dot {
+  font-family: "Gilroy";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #111111;
+}
+.hall_text h3 {
+  font-family: "Gilroy";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #111111;
+  margin-bottom: 5px;
+}
+.hall_slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.main_img {
+  width: 100%;
+  height: 500px;
+  margin-bottom: 20px;
+}
+.main_img img {
+  width: 100%;
+  height: 100%;
+}
+.other_images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+.other_images img {
+  width: calc((100% - 100px) / 6);
+  aspect-ratio: 1/1;
+  cursor: pointer;
+}
+.hall_hero_reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
