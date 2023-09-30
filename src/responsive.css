@@ -1,0 +1,242 @@
+@media screen and (max-width: 1440px) {
+  .book_text {
+    width: 50%;
+  }
+  .book_text p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .book_text h1 {
+    font-size: 48px;
+    line-height: 56px;
+  }
+  .book .book_btn_white {
+    font-size: 24px;
+    line-height: 32px;
+    border-radius: 100px;
+    padding: 7px 25px;
+  }
+  .navbar {
+    gap: 15px;
+  }
+  .navbar li a {
+    font-size: 22px;
+    line-height: 26px;
+  }
+  .logo img {
+    transform: scale(0.8);
+  }
+  .phone {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .halls {
+    margin-top: 50px;
+  }
+  .halls h2 {
+    font-size: 100px;
+    line-height: 122px;
+  }
+  .halls h2:after {
+    top: 25px;
+    right: -30px;
+    font-size: 24px;
+    line-height: 47px;
+  }
+  .halls p {
+    font-size: 20px;
+    line-height: 24px;
+    max-width: 560px;
+  }
+  .line {
+    margin: 30px 0;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .burger {
+    display: block;
+  }
+  .burger > svg {
+    color: #fff;
+    font-size: 40px;
+    position: relative;
+  }
+  .navbar {
+    display: none;
+  }
+  .phone {
+    display: none;
+  }
+  .burger_menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #fff !important;
+    color: #000;
+    padding: 35px 20px;
+    position: fixed;
+    top: 30px;
+    right: 15px;
+    z-index: 9;
+  }
+  .burger_menu svg {
+    color: #000;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+  }
+  .burger_menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: #000;
+    gap: 10px;
+  }
+  .burger_menu a {
+    font-family: "Gilroy";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #000;
+  }
+  .burger_menu > a {
+    display: inline-block;
+    margin-top: 15px;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .book_text {
+    width: 65%;
+  }
+  .book_text p {
+    font-size: 16px;
+    line-height: 20px;
+    text-align: right;
+  }
+  .book_text h1 {
+    font-size: 36px;
+    line-height: 56px;
+  }
+  .book .book_btn_white {
+    font-size: 18px;
+    line-height: 24px;
+    border-radius: 100px;
+    padding: 7px 25px;
+  }
+  .book .book_btn_white img {
+    transform: scale(0.7);
+    margin-left: 5px;
+  }
+  .halls h2 {
+    font-size: 72px;
+    line-height: 80px;
+  }
+  .halls h2:after {
+    top: 10px;
+    right: -30px;
+    font-size: 24px;
+    line-height: 47px;
+  }
+  .halls p {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 400px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .book {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 20px;
+  }
+  .book_text {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .book_text p {
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+  }
+  .book_text h1 {
+    font-size: 36px;
+    line-height: 56px;
+  }
+  .book .book_btn_white {
+    font-size: 18px;
+    line-height: 24px;
+    border-radius: 100px;
+    padding: 7px 25px;
+  }
+  .book .book_btn_white img {
+    transform: scale(0.7);
+    margin-left: 5px;
+  }
+  .burger_menu {
+    top: 20px;
+    right: 10px;
+  }
+  .halls {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .halls h2 {
+    font-size: 100px;
+    line-height: 80px;
+  }
+  .halls h2:after {
+    top: 10px;
+    right: -30px;
+    font-size: 24px;
+    line-height: 47px;
+  }
+  .halls p {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 400px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .halls {
+    gap: 0;
+    margin: 20px;
+  }
+  .halls h2 {
+    font-size: 72px;
+    line-height: 80px;
+  }
+  .halls h2:after {
+    top: 10px;
+    right: -30px;
+    font-size: 24px;
+    line-height: 47px;
+  }
+  .halls p {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 400px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 320px) {
+}

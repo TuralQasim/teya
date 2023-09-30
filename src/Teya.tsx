@@ -1,8 +1,29 @@
-import VideoPlayer from "./components/VideoPlayer";
-import logo from "./icons/logo.svg";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import HallTextContent from "./components/HallTextContent";
 import HallSlider from "./components/HallSlider";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { FaXmark } from "react-icons/fa6";
+import HallTextRain from "./components/HallTextRain";
+import HallTextCikloma from "./components/HallTextCikloma";
+import HallTextInteryer from "./components/HallTextInteryer";
+import HallTextLoft from "./components/HallTextLoft";
+import Zone from "./components/Zone";
+import AnimatedTitle from "./components/AnimatedTitle";
+import Play from "./components/Play";
+import BookBtn from "./components/BookBtn";
+import PromotionContent1 from "./components/PromotionContent1";
+import PromotionContent2 from "./components/PromotionContent2";
+import PromotionContent3 from "./components/PromotionContent3";
+import PromotionContent4 from "./components/PromotionContent4";
+import PromotionContent5 from "./components/PromotionContent5";
+import PromotionItem from "./components/PromotionItem";
+import QuestionItem from "./components/QuestionItem";
+import ComandItem from "./components/ComandItem";
+
 import arrow from "./icons/arrow.svg";
+import VideoPlayer from "./components/VideoPlayer";
+import logo from "./icons/logo.svg";
 import img1 from "./images/content/content1.png";
 import img2 from "./images/content/content2.png";
 import img3 from "./images/content/content3.png";
@@ -39,23 +60,28 @@ import zone3 from "./images/zone/zone3.png";
 import zone4 from "./images/zone/zone4.png";
 import zone5 from "./images/zone/zone5.png";
 import zone6 from "./images/zone/zone6.png";
+import galery1 from "./images/galery/galery1.png";
+import galery2 from "./images/galery/galery2.png";
+import galery3 from "./images/galery/galery3.png";
+import galery4 from "./images/galery/galery4.png";
+import galery5 from "./images/galery/galery5.png";
+import galery6 from "./images/galery/galery6.png";
+import galery7 from "./images/galery/galery7.png";
+import galery8 from "./images/galery/galery8.png";
+import galery9 from "./images/galery/galery9.png";
+import comand1 from "./images/comand/comand1.png";
+import comand2 from "./images/comand/comand2.png";
+import comand3 from "./images/comand/comand3.png";
+import comand4 from "./images/comand/comand4.png";
+import comand5 from "./images/comand/comand5.png";
+import comand6 from "./images/comand/comand6.png";
+import footLogo from "./icons/footLogo.svg";
+import discount1 from "./images/discount/discount1.png";
+import discount2 from "./images/discount/discount2.png";
+import discount3 from "./images/discount/discount3.png";
+import discount4 from "./images/discount/discount4.png";
+import discount5 from "./images/discount/discount5.png";
 
-import HallTextRain from "./components/HallTextRain";
-import HallTextCikloma from "./components/HallTextCikloma";
-import HallTextInteryer from "./components/HallTextInteryer";
-import HallTextLoft from "./components/HallTextLoft";
-import Zone from "./components/Zone";
-import AnimatedTitle from "./components/AnimatedTitle";
-import Play from "./components/Play";
-import BookBtn from "./components/BookBtn";
-import PromotionContent1 from "./components/PromotionContent1";
-import PromotionContent2 from "./components/PromotionContent2";
-import PromotionContent3 from "./components/PromotionContent3";
-import PromotionContent4 from "./components/PromotionContent4";
-import PromotionContent5 from "./components/PromotionContent5";
-import PromotionItem from "./components/PromotionItem";
-import { useState } from "react";
-import QuestionItem from "./components/QuestionItem";
 function Teya() {
   const imgArr: string[] = [img1, img2, img3, img4, img5, img6];
   const imgArr2: string[] = [rain1, rain2, rain3, rain4, rain5, rain6];
@@ -110,6 +136,7 @@ function Teya() {
   ];
   const [activeItem, setActiveItem] = useState<number | null>(null);
   const [activeItemQues, setActiveItemQues] = useState<number | null>(null);
+  const [burger, setBurger] = useState<boolean>(false);
   const questionItems = [
     {
       h2: "01",
@@ -252,6 +279,39 @@ function Teya() {
                 <a href="#" className="phone">
                   +7 (987) 394-58-31
                 </a>
+                <div className="burger">
+                  <GiHamburgerMenu onClick={() => setBurger(true)} />
+                  {burger && (
+                    <AnimatePresence>
+                      <motion.div
+                        initial={{ y: -200 }}
+                        animate={{ y: 0 }}
+                        exit={{ y: -200 }}
+                        className="burger_menu"
+                      >
+                        <ul>
+                          <li>
+                            <a href="#">залы</a>
+                          </li>
+                          <li>
+                            <a href="#">оборудование</a>
+                          </li>
+                          <li>
+                            <a href="#">услуги</a>
+                          </li>
+                          <li>
+                            <a href="#">о студии</a>
+                          </li>
+                          <li>
+                            <a href="#">контакты</a>
+                          </li>
+                        </ul>
+                        <a href="#">+7 (987) 394-58-31</a>
+                        <FaXmark onClick={() => setBurger(false)} />
+                      </motion.div>
+                    </AnimatePresence>
+                  )}
+                </div>
               </header>
               <div className="book">
                 <div className="book_text">
@@ -265,7 +325,7 @@ function Teya() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="container">
         <div className="halls">
           <h2>залы</h2>
@@ -274,7 +334,7 @@ function Teya() {
             оборудованием
           </p>
         </div>
-        <div className="line"></div>
+        {/* <div className="line"></div>
         <div className="hall_hero">
           <HallTextContent />
           <HallSlider arr={imgArr} />
@@ -298,10 +358,10 @@ function Teya() {
         <div className="hall_hero">
           <HallTextLoft />
           <HallSlider arr={imgArr5} />
-        </div>
+        </div> */}
         <div className="line"></div>
       </div>
-      <div className="other_bg">
+      {/* <div className="other_bg">
         <div className="container">
           <div className="other">
             <h2>другие зоны</h2>
@@ -337,6 +397,45 @@ function Teya() {
           image5={zone5}
           image6={zone6}
         />
+        <div className="line"></div>
+      </div>
+      <div className="container">
+        <div className="line"></div>
+        <div className="discount">
+          <div className="discount_top">
+            <div className="discount_top_left">
+              <img src={discount1} alt="" />
+              <h2>акция</h2>
+            </div>
+            <div className="discount_top_rigt">
+              <img src={discount2} alt="" />
+            </div>
+          </div>
+          <div className="discount_mid">
+            <div className="discount_mid_left">
+              <p>
+                На первое посещение студии по промокоду
+                <span>«ВОДОЛЕЙ»</span>
+              </p>
+            </div>
+            <div className="discount_mid_right">
+              <h2>скидка 50%</h2>
+              <BookBtn />
+            </div>
+          </div>
+          <div className="discount_bottom">
+            <div className="discount_bottom_left">
+              <img src={discount3} alt="" />
+              <img src={discount4} alt="" />
+            </div>
+            <div className="discount_bottom_right">
+              <p>
+                Первая и единственная фотостудия Нижнего Новгорода с аквазалом
+              </p>
+              <img src={discount5} alt="" />
+            </div>
+          </div>
+        </div>
         <div className="line"></div>
       </div>
       <AnimatedTitle text="творческое пространство посмотрите рум-тур" />
@@ -401,7 +500,7 @@ function Teya() {
         </div>
         <div className="line"></div>
       </div>
-      <AnimatedTitle text="видео с открытия студии как это было" /> */}
+      <AnimatedTitle text="видео с открытия студии как это было" />
       <div className="container">
         <div className="line"></div>
         <Play name="play2" />
@@ -437,6 +536,107 @@ function Teya() {
             </div>
           </div>
         </div>
+        <div className="galery">
+          <h2 className="galery_title">фотогалерея</h2>
+          <div className="galery_hero">
+            <div className="galery_top">
+              <div className="galery_top_left">
+                <img loading="lazy" src={galery1} alt="" />
+                <img loading="lazy" src={galery2} alt="" />
+              </div>
+              <img loading="lazy" src={galery3} alt="" />
+            </div>
+            <div className="galery_mid">
+              <div className="galery_mid_left">
+                <img loading="lazy" src={galery4} alt="" />
+              </div>
+              <div className="galery_mid_right">
+                <img loading="lazy" src={galery5} alt="" />
+                <img loading="lazy" src={galery6} alt="" />
+              </div>
+            </div>
+            <div className="galery_top galery_top_reverse">
+              <div className="galery_top_left galery_top_left_reverse">
+                <img loading="lazy" src={galery9} alt="" />
+                <img loading="lazy" src={galery8} alt="" />
+              </div>
+              <img loading="lazy" src={galery7} alt="" />
+            </div>
+          </div>
+        </div>
+        <div className="comand">
+          <div className="comand_title">
+            <h2>наша</h2>
+            <span></span>
+            <h2>команда</h2>
+          </div>
+          <div className="comand_items">
+            <div className="comand_items_left">
+              <ComandItem
+                isVideo={true}
+                h6=""
+                h5="Прочувствуйте атмосферу съемок"
+                p="(01)"
+                src={comand1}
+                position="topRight"
+              />
+            </div>
+            <div className="comand_items_mid">
+              <ComandItem
+                isVideo={false}
+                h6="(управляющий студии)"
+                h5="Александр Зверев"
+                p="(02)"
+                src={comand2}
+                position="bottomLeft"
+              />
+              <ComandItem
+                isVideo={false}
+                h6="(арт-директор/штатный декоратор)"
+                h5="ульяна Жаворонкова"
+                p="(03)"
+                src={comand3}
+                position="topRight"
+              />
+              <ComandItem
+                isVideo={false}
+                h6="(штатный видеограф)"
+                h5="Роман Худяков"
+                p="(04)"
+                src={comand4}
+                position="bottomLeft"
+              />
+              <ComandItem
+                isVideo={false}
+                h6="(управляющий студии)"
+                h5="Александр Зверев"
+                p="(05)"
+                src={comand5}
+                position=""
+              />
+            </div>
+            <div className="comand_items_right">
+              <ComandItem
+                isVideo={false}
+                h6="(штатный фотограф)"
+                h5="Кристина Середнёва"
+                p="(06)"
+                src={comand6}
+                position=""
+              />
+            </div>
+          </div>
+          <div className="comand_text">
+            <h2>Арт-фотостудия «Тейя» —</h2>
+            <h2>это 300 кв.м для вашего</h2>
+            <h2>комфортного творчества!</h2>
+            <p>
+              У нас крутой сервис — с комфортной зоной ожидания, кофе и
+              отзывчивым персоналом. Наши штатные фотограф, видеограф и
+              декоратор всегда готовы воплощать ваши идеи и предлагают свои!
+            </p>
+          </div>
+        </div>
         <h2 className="question_title">частые вопросы</h2>
         <div className="question_acc">
           <div className="line"></div>
@@ -452,7 +652,89 @@ function Teya() {
             );
           })}
         </div>
-      </div>
+        <footer>
+          <div className="foot_top">
+            <img src={footLogo} alt="" />
+            <h2>арт фотостудия</h2>
+          </div>
+          <div className="line"></div>
+          <div className="foot_hero">
+            <div className="foot1">
+              <div className="foot_address">
+                <h2 className="foot_title">Адрес фотостудии</h2>
+                <p>Нижний Новгород, улица Нестерова, 22</p>
+                <a href="#">+7 (987) 394-58-31</a>
+              </div>
+              <div className="how_get">
+                <h2 className="foot_title">Как добраться</h2>
+                <p>
+                  В навигаторе набирайте Тейя, приведет с нужной стороны, с
+                  Большой Печерской. Ориентир ресторан АМО, мы их соседи.
+                </p>
+                <p>
+                  Если забьете ул. Нестерова, д.22, то приведет с другой
+                  стороны. Придется обходить дом.
+                </p>
+              </div>
+            </div>
+            <div className="foot2">
+              <div className="foot_nav">
+                <h2 className="foot_title">Навигация</h2>
+                <ul>
+                  <li>
+                    <a href="#">Залы</a>
+                  </li>
+                  <li>
+                    <a href="#">оборудование</a>
+                  </li>
+                  <li>
+                    <a href="#">услуги</a>
+                  </li>
+                  <li>
+                    <a href="#">о студии</a>
+                  </li>
+                </ul>
+              </div>
+              <div className="foot_policy">
+                <p>Политика конфиденциальности</p>
+                <p>Все права защищены</p>
+              </div>
+            </div>
+            <div className="foot3">
+              <div className="foot_social">
+                <h2 className="foot_title">Социальные сети</h2>
+                <ul>
+                  <li>
+                    <a href="#">telegram</a>
+                  </li>
+                  <li>
+                    <a href="#">вконтакте</a>
+                  </li>
+                  <li>
+                    <a href="#">instagram</a>
+                  </li>
+                </ul>
+              </div>
+              <p>Meta признана экстремистской организацией в РФ</p>
+            </div>
+            <div className="foot4">
+              <a href="#">Смотреть на Яндекс картах</a>
+              <div className="map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.925868895192!2d49.8347487749935!3d40.366168058716724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d44daf66477%3A0xdbe14ece0c3f896e!2zUcSxeiBRYWxhc8Sx!5e0!3m2!1saz!2saz!4v1696105979932!5m2!1saz!2saz"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div className="line"></div>
+        </footer>
+      </div> */}
     </>
   );
 }
