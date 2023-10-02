@@ -9,7 +9,6 @@ import HallTextCikloma from "./components/HallTextCikloma";
 import HallTextInteryer from "./components/HallTextInteryer";
 import HallTextLoft from "./components/HallTextLoft";
 import Zone from "./components/Zone";
-import AnimatedTitle from "./components/AnimatedTitle";
 import Play from "./components/Play";
 import BookBtn from "./components/BookBtn";
 import PromotionContent1 from "./components/PromotionContent1";
@@ -81,6 +80,17 @@ import discount2 from "./images/discount/discount2.png";
 import discount3 from "./images/discount/discount3.png";
 import discount4 from "./images/discount/discount4.png";
 import discount5 from "./images/discount/discount5.png";
+import product1 from "./images/product/product1.png";
+import product2 from "./images/product/product2.png";
+import product3 from "./images/product/product3.png";
+import product4 from "./images/product/product4.png";
+import product5 from "./images/product/product5.png";
+import product6 from "./images/product/product6.png";
+import video1 from "./video/video1.mp4";
+import video2 from "./video/video2.mp4";
+
+import ProductCard from "./components/ProductCard";
+import ScrollText from "./components/ScrollText";
 
 function Teya() {
   const imgArr: string[] = [img1, img2, img3, img4, img5, img6];
@@ -248,9 +258,36 @@ function Teya() {
       p1: "Да, в каждом зале есть Яндекс станция Алиса с оплаченой подпиской. Так же можно подключить колонку к своему телефону.",
     },
   ];
+  const products = [
+    {
+      image: product1,
+      text: "Коммерческие съемки",
+    },
+    {
+      image: product2,
+      text: "Предметная съемка «под ключ»",
+    },
+    {
+      image: product3,
+      text: "Фотосессия «под ключ»",
+    },
+    {
+      image: product4,
+      text: "Праздник/мероприятие «под ключ»",
+    },
+    {
+      image: product5,
+      text: "Бизнес-портрет",
+    },
+    {
+      image: product6,
+      text: "Другие услуги",
+    },
+  ];
+
   return (
     <>
-      {/* <div className="hero">
+      <div className="hero">
         <VideoPlayer />
         <div className="hero_text_bg">
           <div className="container">
@@ -325,7 +362,7 @@ function Teya() {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
       <div className="container">
         <div className="halls">
           <h2>залы</h2>
@@ -334,7 +371,7 @@ function Teya() {
             оборудованием
           </p>
         </div>
-        {/* <div className="line"></div>
+        <div className="line"></div>
         <div className="hall_hero">
           <HallTextContent />
           <HallSlider arr={imgArr} />
@@ -358,10 +395,10 @@ function Teya() {
         <div className="hall_hero">
           <HallTextLoft />
           <HallSlider arr={imgArr5} />
-        </div> */}
+        </div>
         <div className="line"></div>
       </div>
-      {/* <div className="other_bg">
+      <div className="other_bg">
         <div className="container">
           <div className="other">
             <h2>другие зоны</h2>
@@ -438,14 +475,17 @@ function Teya() {
         </div>
         <div className="line"></div>
       </div>
-      <AnimatedTitle text="творческое пространство посмотрите рум-тур" />
+      <ScrollText
+        text="творческое пространство посмотрите рум-тур"
+        position="toRight"
+      />
       <div className="container">
         <div className="line"></div>
       </div>
-      <AnimatedTitle text="как устроена фотостудия «тейя»" />
+      <ScrollText text="как устроена фотостудия «тейя»" position="toLeft" />
       <div className="container">
         <div className="line"></div>
-        <Play name="play" />
+        <Play name="play" videoSrc={video1} />
         <div className="equipment">
           <div className="equipment_text">
             <h2>оборудование</h2>
@@ -500,10 +540,26 @@ function Teya() {
         </div>
         <div className="line"></div>
       </div>
-      <AnimatedTitle text="видео с открытия студии как это было" />
+      <div className="container">
+        <div className="service_title">услуги</div>
+        <div className="service_hero">
+          {products.map((product, index) => (
+            <ProductCard
+              key={index}
+              index={index}
+              image={product.image}
+              text={product.text}
+            />
+          ))}
+        </div>
+      </div>
+      <ScrollText
+        text="видео с открытия студии как это было"
+        position="toRight"
+      />
       <div className="container">
         <div className="line"></div>
-        <Play name="play2" />
+        <Play name="play2" videoSrc={video2} />
         <h2 className="promotion_title">акции</h2>
         <div className="promotion_subtitle">
           <h3>
@@ -637,6 +693,39 @@ function Teya() {
             </p>
           </div>
         </div>
+        {/* <SwiperComponent
+          slidesPerView={3}
+          spaceBetween={30}
+          paginationClickable={true}
+        >
+          <SwiperSlide>
+            <Slide src1={slide1} src2={slide2} src3={slide3} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Slide src1={slide4} src2={slide5} src3={slide6} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Slide src1={slide7} src2={slide8} src3={slide9} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Slide src1={slide1} src2={slide2} src3={slide3} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Slide src1={slide4} src2={slide5} src3={slide6} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Slide src1={slide7} src2={slide8} src3={slide9} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Slide src1={slide1} src2={slide2} src3={slide3} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Slide src1={slide4} src2={slide5} src3={slide6} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Slide src1={slide7} src2={slide8} src3={slide9} />
+          </SwiperSlide>
+        </SwiperComponent> */}
         <h2 className="question_title">частые вопросы</h2>
         <div className="question_acc">
           <div className="line"></div>
@@ -734,7 +823,7 @@ function Teya() {
           </div>
           <div className="line"></div>
         </footer>
-      </div> */}
+      </div>
     </>
   );
 }

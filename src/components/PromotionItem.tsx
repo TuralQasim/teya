@@ -32,7 +32,7 @@ const PromotionItem: React.FC<PromotionItemProps> = ({
           {item.h2 ? (
             <h2>{item.h2}</h2>
           ) : (
-            <img loading="lazy" className="pro,otion_star" src={star} alt="" />
+            <img loading="lazy" className="promotion_star" src={star} alt="" />
           )}
         </div>
         <div className="promotion_item_title_text">
