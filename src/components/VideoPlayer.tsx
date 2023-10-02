@@ -7,6 +7,13 @@ function VideoPlayer() {
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.volume = 0;
+      videoRef.current.addEventListener("ended", () => {
+        videoRef.current!.currentTime = 0;
+        videoRef.current!.play().catch((error) => {
+          console.error("Воспроизведение видео не удалось:", error);
+        });
+      });
+
       videoRef.current.play().catch((error) => {
         console.error("Воспроизведение видео не удалось:", error);
       });

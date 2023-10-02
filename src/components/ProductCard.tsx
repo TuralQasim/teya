@@ -12,11 +12,16 @@ const ProductCard: React.FC<ProductCardProps> = ({ image, text, index }) => {
       <div className="card">
         <div className="card-inner">
           <div className="front">
-            <img src={image} loading="lazy" alt="Product" className="product-image" />
+            <img
+              src={image}
+              loading="lazy"
+              alt="Product"
+              className="product-image"
+            />
             <p>{text}</p>
           </div>
           <div className="back">
-            {(index == 0) | (index == 1) ? (
+            {index == 0 ? (
               <div className="product-text">
                 <h5>Коммерческие съемки</h5>
                 <div className="product_text_bottom">
@@ -29,6 +34,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ image, text, index }) => {
                     профессиональное оборудование, фото/видеосъемка по запросу.
                   </p>
                   <h2>Пробный час в подарок</h2>
+                </div>
+              </div>
+            ) : index == 1 ? (
+              <div className="product-text">
+                <h5>Предметная съемка под ключ</h5>
+                <div className="product_text_bottom">
+                  <h3>фотограф, реквизит, аренда зала</h3>
+                  <p>от 1000₽</p>
                 </div>
               </div>
             ) : index == 2 ? (
