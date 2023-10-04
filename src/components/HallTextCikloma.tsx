@@ -1,9 +1,10 @@
+import AnimatedHeader from "./AnimatedHeader";
 import BookBtn from "./BookBtn";
 
 function HallTextCikloma() {
   return (
     <div className="hall_text">
-      <h2>Циклорама</h2>
+      <AnimatedHeader title="Циклорама" forStyle="hall_text_title" />
       <p>
         Белоснежная угловая циклорама, ровная и чистая! Идеальна для
         коммерческих съемок, маркетплейсов и любой творческой задумки.

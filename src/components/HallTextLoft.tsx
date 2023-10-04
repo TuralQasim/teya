@@ -1,9 +1,10 @@
+import AnimatedHeader from "./AnimatedHeader";
 import BookBtn from "./BookBtn";
 
 function HallTextLoft() {
   return (
     <div className="hall_text">
-      <h2>Лофт</h2>
+      <AnimatedHeader title="Лофт" forStyle="hall_text_title" />
       <h3>Коворкинг</h3>
       <p>
         Зал в стиле лофт с красивым естественным освещением! Место для создания

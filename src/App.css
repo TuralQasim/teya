@@ -85,7 +85,7 @@ header {
   gap: 15px;
   align-items: center;
 }
-.navbar li a {
+.navbar li {
   font-family: "Gilroy";
   font-size: 28px;
   font-weight: 400;
@@ -93,6 +93,7 @@ header {
   letter-spacing: 0em;
   text-align: center;
   color: #fff;
+  cursor: pointer;
 }
 .burger_menu {
   display: none;
@@ -141,6 +142,7 @@ header {
   letter-spacing: 0.02em;
   text-align: left;
   color: #fff;
+  text-transform: uppercase;
 }
 .book_btn_white {
   margin-right: auto;
@@ -181,7 +183,7 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-.halls h2 {
+.halls_title {
   font-family: "Gilroy";
   font-size: 148px;
   font-weight: 500;
@@ -190,6 +192,7 @@ header {
   text-align: left;
   color: #111111;
   position: relative;
+  text-transform: uppercase;
 }
 .halls h2:after {
   content: "(5)";
@@ -237,7 +240,7 @@ header {
 .hall_slider {
   width: 50%;
 }
-.hall_text h2 {
+.hall_text_title {
   font-family: "Gilroy";
   font-size: 92px;
   font-weight: 500;
@@ -245,6 +248,7 @@ header {
   letter-spacing: 0.02em;
   text-align: left;
   color: #111111;
+  text-transform: uppercase;
 }
 .hall_text p {
   font-family: "Gilroy";
@@ -339,6 +343,7 @@ header {
   width: calc((100% - 100px) / 6);
   aspect-ratio: 1/1;
   cursor: pointer;
+  object-fit: cover;
 }
 .hall_hero_reverse {
   display: flex;
@@ -367,6 +372,18 @@ header {
   color: #fff;
   position: relative;
 }
+.other h2::after {
+  position: absolute;
+  content: "(3)";
+  top: 20px;
+  right: -50px;
+  font-family: "Gilroy";
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 47px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
 .other p {
   font-family: "Gilroy";
   font-size: 24px;
@@ -377,7 +394,6 @@ header {
   max-width: 368px;
   color: #fff;
 }
-
 .zone {
   display: flex;
   justify-content: space-between;
@@ -402,25 +418,29 @@ header {
 }
 .zone_text h2 {
   font-family: "Gilroy";
-  font-size: 92px;
+  font-size: 80px;
   font-weight: 500;
   line-height: 120px;
   letter-spacing: 0.02em;
   text-align: left;
   color: #111111;
   position: relative;
+  text-transform: uppercase;
 }
 .zone_text h2 span {
   position: absolute;
   font-family: "Gilroy";
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 31px;
   letter-spacing: 0.02em;
   text-align: left;
   color: #111111;
   top: 20px;
-  right: -140px;
+  right: -165px;
+}
+.withContent1 span {
+  right: -110px !important;
 }
 .zone_text p {
   font-family: "Gilroy";
@@ -480,7 +500,7 @@ header {
   width: 100%;
   height: 646px;
   position: relative;
-  background-image: url("./images/play/play1.png");
+  background-image: url("./images/play/play1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -493,7 +513,7 @@ header {
   width: 100%;
   height: 646px;
   position: relative;
-  background-image: url("./images/play/play2.png");
+  background-image: url("./images/play/play2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -557,6 +577,7 @@ header {
   line-height: 192px;
   letter-spacing: 0.02em;
   text-align: left;
+  text-transform: uppercase;
 }
 .equipment_text ul {
   display: flex;
@@ -637,6 +658,7 @@ header {
   margin: 60px 0 20px;
   position: relative;
   width: max-content;
+  text-transform: uppercase;
 }
 .promotion_title::after {
   position: absolute;
@@ -864,6 +886,7 @@ header {
   position: relative;
   width: max-content;
   margin-bottom: 80px;
+  text-transform: uppercase;
 }
 .question_title::after {
   content: "(отвечаем)";
@@ -969,6 +992,7 @@ header {
   text-align: left;
   color: #111111;
   margin-bottom: 30px;
+  text-transform: uppercase;
 }
 .galery_hero {
   display: flex;
@@ -1223,6 +1247,7 @@ header {
   letter-spacing: 0.02em;
   text-align: left;
   color: #111111;
+  text-transform: uppercase;
 }
 .comand_title span {
   width: 20%;
@@ -1302,14 +1327,17 @@ footer .line {
   color: #111111;
   margin-bottom: 5px;
 }
-.foot_hero a {
+.foot_hero a,
+.foot2 li {
   font-family: "Gilroy";
   font-size: 16px;
   font-weight: 400;
   line-height: 21px;
   letter-spacing: 0.02em;
   text-align: left;
+  cursor: pointer;
   color: #888888;
+  text-transform: capitalize;
 }
 .foot_address a {
   font-family: "Gilroy";
@@ -1373,6 +1401,14 @@ footer .line {
 }
 .foot3 p {
   margin-top: auto;
+  position: relative;
+}
+.foot3 p::before {
+  content: "*";
+  position: absolute;
+  top: 5px !important;
+  left: -15px !important;
+  font-size: 24px;
 }
 .discount {
   display: flex;
@@ -1403,6 +1439,7 @@ footer .line {
   letter-spacing: 0.02em;
   text-align: center;
   color: #111111;
+  text-transform: uppercase;
 }
 .discount_top_left img {
   width: 25%;
@@ -1463,6 +1500,7 @@ footer .line {
   letter-spacing: 0.02em;
   text-align: center;
   color: #111111;
+  text-transform: uppercase;
 }
 .discount_bottom {
   display: flex;
@@ -1514,6 +1552,7 @@ footer .line {
   letter-spacing: 0.02em;
   text-align: left;
   color: #111111;
+  text-transform: uppercase;
 }
 .service_hero {
   width: 100%;
@@ -1536,22 +1575,38 @@ footer .line {
   transform-style: preserve-3d;
   transition: transform 0.5s;
   position: relative;
-}
-
-.card:hover .card-inner {
-  transform: rotateY(180deg);
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .card-inner {
   width: 100%;
   height: 100%;
   position: absolute;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
-  transform: rotateY(0deg);
+  transition: transform 6s;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .front,
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  border-radius: 10px;
+}
+.back {
+  z-index: 7;
+  background-color: #eff0f4;
+  transition: transform 0.6s;
+}
+.card-inner:hover .back {
+  transform: translateY(-100%);
+}
+/* .front,
 .back {
   width: 100%;
   height: 100%;
@@ -1572,7 +1627,7 @@ footer .line {
   max-height: 100%;
   width: 100%;
   height: 100%;
-}
+} */
 
 .product-text {
   display: flex;
@@ -1714,10 +1769,10 @@ footer .line {
   letter-spacing: 0.02em;
 }
 .right_to_right {
-  animation: RightToRight 3s infinite linear;
+  animation: RightToRight 5s infinite linear;
 }
 .right_to_left {
-  animation: RightToLeft 3s infinite linear;
+  animation: RightToLeft 5s infinite linear;
 }
 @keyframes RightToRight {
   from {
@@ -1734,4 +1789,15 @@ footer .line {
   to {
     transform: translateX(-50%);
   }
+}
+.animated-header {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.4s ease-in-out, transform 0.8s ease-in-out;
+  text-transform: uppercase;
+}
+
+.fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
 }

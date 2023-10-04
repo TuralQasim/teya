@@ -1,9 +1,10 @@
+import AnimatedHeader from "./AnimatedHeader";
 import BookBtn from "./BookBtn";
 
 function HallTextInteryer() {
   return (
     <div className="hall_text">
-      <h2>Интерьерный</h2>
+      <AnimatedHeader title="Интерьерный" forStyle="hall_text_title" />
       <h3>Конференц-зал</h3>
       <p>Зал в винтажном классическом стиле с тремя фото локациями.</p>
       <ul className="with_dot">

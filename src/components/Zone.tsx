@@ -1,4 +1,5 @@
 import React from "react";
+import AnimatedHeader from "./AnimatedHeader";
 
 type ZoneType = {
   content?: string;
@@ -27,10 +28,17 @@ const Zone: React.FC<ZoneType> = ({
   return (
     <div className={reverse ? "zone zone_reverse" : "zone"}>
       <div className="zone_text">
-        <h2 className={content ? "withContent" : ""}>
-          <span>{content ? content : ""}</span>
-          {h2}
-        </h2>
+        <AnimatedHeader
+          title={h2}
+          forStyle={
+            content == "(для взрослых)"
+              ? "withContent"
+              : content == "(для детей)"
+              ? "withContent1"
+              : ""
+          }
+          content={content}
+        />
         <p>{p}</p>
       </div>
       {image1 ? (

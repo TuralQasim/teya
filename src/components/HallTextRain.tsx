@@ -1,9 +1,10 @@
+import AnimatedHeader from "./AnimatedHeader";
 import BookBtn from "./BookBtn";
 
 function HallTextRain() {
   return (
     <div className="hall_text">
-      <h2>дождь</h2>
+      <AnimatedHeader title="дождь" forStyle="hall_text_title" />
       <p>
         Это большая площадка для АКВАСЪЕМКИ.Зал оборудован системами, с помощью
         которых можно создавать крутые кадры с водой.

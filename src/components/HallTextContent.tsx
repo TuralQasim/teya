@@ -1,9 +1,10 @@
+import AnimatedHeader from "./AnimatedHeader";
 import BookBtn from "./BookBtn";
 
 function HallTextContent() {
   return (
     <div className="hall_text">
-      <h2>контент</h2>
+      <AnimatedHeader title="залы" forStyle="hall_text_title" />
       <p>
         Светлый зал с хорошим естественным освещением, идеален для контентной,
         каталожной, тематической, предметной съемок, съемки личного бренда и

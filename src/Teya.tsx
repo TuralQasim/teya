@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import HallTextContent from "./components/HallTextContent";
 import HallSlider from "./components/HallSlider";
@@ -91,6 +91,8 @@ import video2 from "./video/video2.mp4";
 
 import ProductCard from "./components/ProductCard";
 import ScrollText from "./components/ScrollText";
+import AnimatedHeader from "./components/AnimatedHeader";
+import ImageAnimation from "./components/ImageAnimation";
 
 function Teya() {
   const imgArr: string[] = [img1, img2, img3, img4, img5, img6];
@@ -284,6 +286,17 @@ function Teya() {
       text: "Другие услуги",
     },
   ];
+  const footerRef = useRef(null);
+  const equipmentRef = useRef(null);
+  const serviceRef = useRef(null);
+  const comandRef = useRef(null);
+  const hallsRef = useRef(null);
+
+  const scrollToSection = (ref: any) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <>
@@ -297,23 +310,15 @@ function Teya() {
                   <img src={logo} alt="" />
                 </div>
                 <ul className="navbar">
-                  <li>
-                    <a href="#">залы</a>
+                  <li onClick={() => scrollToSection(hallsRef)}>залы</li>
+                  <li onClick={() => scrollToSection(equipmentRef)}>
+                    оборудование
                   </li>
-                  <li>
-                    <a href="#">оборудование</a>
-                  </li>
-                  <li>
-                    <a href="#">услуги</a>
-                  </li>
-                  <li>
-                    <a href="#">о студии</a>
-                  </li>
-                  <li>
-                    <a href="#">контакты</a>
-                  </li>
+                  <li onClick={() => scrollToSection(serviceRef)}>услуги</li>
+                  <li onClick={() => scrollToSection(comandRef)}>о студии</li>
+                  <li onClick={() => scrollToSection(footerRef)}>контакты</li>
                 </ul>
-                <a href="#" className="phone">
+                <a href="tel:79873945831" className="phone">
                   +7 (987) 394-58-31
                 </a>
                 <div className="burger">
@@ -327,23 +332,23 @@ function Teya() {
                         className="burger_menu"
                       >
                         <ul>
-                          <li>
-                            <a href="#">залы</a>
+                          <li onClick={() => scrollToSection(hallsRef)}>
+                            залы
                           </li>
-                          <li>
-                            <a href="#">оборудование</a>
+                          <li onClick={() => scrollToSection(equipmentRef)}>
+                            оборудование
                           </li>
-                          <li>
-                            <a href="#">услуги</a>
+                          <li onClick={() => scrollToSection(serviceRef)}>
+                            услуги
                           </li>
-                          <li>
-                            <a href="#">о студии</a>
+                          <li onClick={() => scrollToSection(comandRef)}>
+                            о студии
                           </li>
-                          <li>
-                            <a href="#">контакты</a>
+                          <li onClick={() => scrollToSection(footerRef)}>
+                            контакты
                           </li>
                         </ul>
-                        <a href="#">+7 (987) 394-58-31</a>
+                        <a href="tel:79873945831">+7 (987) 394-58-31</a>
                         <FaXmark onClick={() => setBurger(false)} />
                       </motion.div>
                     </AnimatePresence>
@@ -364,8 +369,8 @@ function Teya() {
         </div>
       </div>
       <div className="container">
-        <div className="halls">
-          <h2>залы</h2>
+        <div className="halls" ref={hallsRef}>
+          <AnimatedHeader title="залы" forStyle="halls_title" />
           <p>
             5 залов в разных стилях, оснащенные новым профессиональным
             оборудованием
@@ -437,15 +442,14 @@ function Teya() {
         <div className="line"></div>
       </div>
       <div className="container">
-        <div className="line"></div>
         <div className="discount">
           <div className="discount_top">
             <div className="discount_top_left">
-              <img src={discount1} alt="" />
-              <h2>акция</h2>
+              <ImageAnimation imageUrl={discount1} />
+              <AnimatedHeader title="акция" forStyle="" />
             </div>
             <div className="discount_top_rigt">
-              <img src={discount2} alt="" />
+              <ImageAnimation imageUrl={discount2} />
             </div>
           </div>
           <div className="discount_mid">
@@ -456,20 +460,20 @@ function Teya() {
               </p>
             </div>
             <div className="discount_mid_right">
-              <h2>скидка 50%</h2>
+              <AnimatedHeader title="скидка 50%" forStyle="" />
               <BookBtn />
             </div>
           </div>
           <div className="discount_bottom">
             <div className="discount_bottom_left">
-              <img src={discount3} alt="" />
-              <img src={discount4} alt="" />
+              <ImageAnimation imageUrl={discount3} />
+              <ImageAnimation imageUrl={discount4} />
             </div>
             <div className="discount_bottom_right">
               <p>
                 Первая и единственная фотостудия Нижнего Новгорода с аквазалом
               </p>
-              <img src={discount5} alt="" />
+              <ImageAnimation imageUrl={discount5} />
             </div>
           </div>
         </div>
@@ -486,7 +490,7 @@ function Teya() {
       <div className="container">
         <div className="line"></div>
         <Play name="play" videoSrc={video1} />
-        <div className="equipment">
+        <div className="equipment" ref={equipmentRef}>
           <div className="equipment_text">
             <h2>оборудование</h2>
             <ul>
@@ -540,8 +544,8 @@ function Teya() {
         </div>
         <div className="line"></div>
       </div>
-      <div className="container">
-        <div className="service_title">услуги</div>
+      <div className="container" ref={serviceRef}>
+        <AnimatedHeader title="услуги" forStyle="service_title" />
         <div className="service_hero">
           {products.map((product, index) => (
             <ProductCard
@@ -560,7 +564,7 @@ function Teya() {
       <div className="container">
         <div className="line"></div>
         <Play name="play2" videoSrc={video2} />
-        <h2 className="promotion_title">акции</h2>
+        <AnimatedHeader title="акции" forStyle="promotion_title" />
         <div className="promotion_subtitle">
           <h3>
             На первое посещение студии скидка 50% по промокоду{" "}
@@ -593,39 +597,40 @@ function Teya() {
           </div>
         </div>
         <div className="galery">
-          <h2 className="galery_title">фотогалерея</h2>
+          <AnimatedHeader title="фотогалерея" forStyle="galery_title" />
           <div className="galery_hero">
             <div className="galery_top">
               <div className="galery_top_left">
-                <img loading="lazy" src={galery1} alt="" />
-                <img loading="lazy" src={galery2} alt="" />
+                <ImageAnimation imageUrl={galery1} />
+                <ImageAnimation imageUrl={galery2} />
               </div>
-              <img loading="lazy" src={galery3} alt="" />
+              <ImageAnimation imageUrl={galery3} />
             </div>
             <div className="galery_mid">
               <div className="galery_mid_left">
-                <img loading="lazy" src={galery4} alt="" />
+                <ImageAnimation imageUrl={galery4} />
               </div>
               <div className="galery_mid_right">
-                <img loading="lazy" src={galery5} alt="" />
-                <img loading="lazy" src={galery6} alt="" />
+                <ImageAnimation imageUrl={galery5} />
+                <ImageAnimation imageUrl={galery6} />
               </div>
             </div>
             <div className="galery_top galery_top_reverse">
               <div className="galery_top_left galery_top_left_reverse">
-                <img loading="lazy" src={galery9} alt="" />
-                <img loading="lazy" src={galery8} alt="" />
+                <ImageAnimation imageUrl={galery9} />
+                <ImageAnimation imageUrl={galery8} />
               </div>
-              <img loading="lazy" src={galery7} alt="" />
+              <ImageAnimation imageUrl={galery7} />
             </div>
           </div>
         </div>
-        <div className="comand">
+        <div className="comand" ref={comandRef}>
           <div className="comand_title">
             <h2>наша</h2>
             <span></span>
             <h2>команда</h2>
           </div>
+
           <div className="comand_items">
             <div className="comand_items_left">
               <ComandItem
@@ -726,7 +731,7 @@ function Teya() {
             <Slide src1={slide7} src2={slide8} src3={slide9} />
           </SwiperSlide>
         </SwiperComponent> */}
-        <h2 className="question_title">частые вопросы</h2>
+        <AnimatedHeader title="частые вопросы" forStyle="question_title" />
         <div className="question_acc">
           <div className="line"></div>
           {questionItems.map((item, index) => {
@@ -741,10 +746,10 @@ function Teya() {
             );
           })}
         </div>
-        <footer>
+        <footer id="footer_sec" ref={footerRef}>
           <div className="foot_top">
             <img src={footLogo} alt="" />
-            <h2>арт фотостудия</h2>
+            <AnimatedHeader title="арт фотостудия" forStyle="" />
           </div>
           <div className="line"></div>
           <div className="foot_hero">
@@ -752,7 +757,7 @@ function Teya() {
               <div className="foot_address">
                 <h2 className="foot_title">Адрес фотостудии</h2>
                 <p>Нижний Новгород, улица Нестерова, 22</p>
-                <a href="#">+7 (987) 394-58-31</a>
+                <a href="tel:79873945831">+7 (987) 394-58-31</a>
               </div>
               <div className="how_get">
                 <h2 className="foot_title">Как добраться</h2>
@@ -770,18 +775,12 @@ function Teya() {
               <div className="foot_nav">
                 <h2 className="foot_title">Навигация</h2>
                 <ul>
-                  <li>
-                    <a href="#">Залы</a>
+                  <li onClick={() => scrollToSection(hallsRef)}>залы</li>
+                  <li onClick={() => scrollToSection(equipmentRef)}>
+                    оборудование
                   </li>
-                  <li>
-                    <a href="#">оборудование</a>
-                  </li>
-                  <li>
-                    <a href="#">услуги</a>
-                  </li>
-                  <li>
-                    <a href="#">о студии</a>
-                  </li>
+                  <li onClick={() => scrollToSection(serviceRef)}>услуги</li>
+                  <li onClick={() => scrollToSection(comandRef)}>о студии</li>
                 </ul>
               </div>
               <div className="foot_policy">
