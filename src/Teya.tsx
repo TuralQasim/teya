@@ -698,39 +698,6 @@ function Teya() {
             </p>
           </div>
         </div>
-        {/* <SwiperComponent
-          slidesPerView={3}
-          spaceBetween={30}
-          paginationClickable={true}
-        >
-          <SwiperSlide>
-            <Slide src1={slide1} src2={slide2} src3={slide3} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Slide src1={slide4} src2={slide5} src3={slide6} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Slide src1={slide7} src2={slide8} src3={slide9} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Slide src1={slide1} src2={slide2} src3={slide3} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Slide src1={slide4} src2={slide5} src3={slide6} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Slide src1={slide7} src2={slide8} src3={slide9} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Slide src1={slide1} src2={slide2} src3={slide3} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Slide src1={slide4} src2={slide5} src3={slide6} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Slide src1={slide7} src2={slide8} src3={slide9} />
-          </SwiperSlide>
-        </SwiperComponent> */}
         <AnimatedHeader title="частые вопросы" forStyle="question_title" />
         <div className="question_acc">
           <div className="line"></div>
