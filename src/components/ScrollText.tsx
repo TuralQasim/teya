@@ -1,19 +1,45 @@
-import React from "react";
-
 type ScrollTextProps = {
   text: string;
-  position: string;
+  position?: string;
+  speed?: number;
 };
-const ScrollText: React.FC<ScrollTextProps> = ({ text, position }) => {
+
+const ScrollText: React.FC<ScrollTextProps> = ({
+  text,
+  position,
+  speed = 25000,
+}) => {
+  const style = {
+    "--speed": `${speed}ms`,
+  } as React.CSSProperties; // Указываем тип React.CSSProperties
+
   return (
-    <div className="scroll_container">
-      <div className="scroll">
-        <div
-          className={position == "toRight" ? "right_to_right" : "right_to_left"}
-        >
+    <div className="inner">
+      <div className={`wrapper ${position}`}>
+        <section style={style}>
           <p>{text}</p>
+          <span></span>
           <p>{text}</p>
-        </div>
+          <span></span>
+          <p>{text}</p>
+          <span></span>
+        </section>
+        <section style={style}>
+          <p>{text}</p>
+          <span></span>
+          <p>{text}</p>
+          <span></span>
+          <p>{text}</p>
+          <span></span>
+        </section>
+        <section style={style}>
+          <p>{text}</p>
+          <span></span>
+          <p>{text}</p>
+          <span></span>
+          <p>{text}</p>
+          <span></span>
+        </section>
       </div>
     </div>
   );

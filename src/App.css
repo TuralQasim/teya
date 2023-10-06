@@ -34,6 +34,7 @@
 
 body {
   background-color: #fff;
+  overflow-x: hidden;
 }
 .dnone {
   display: none;
@@ -159,6 +160,17 @@ header {
   border-radius: 100px;
   padding: 7px 30px;
   cursor: pointer;
+  position: relative;
+}
+.book_btn_white .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0.2;
+  border-radius: 100px;
 }
 .book_btn {
   margin-right: auto;
@@ -461,6 +473,7 @@ header {
 .zone_images img {
   width: calc((100% - 10px) / 2);
   aspect-ratio: 1/1;
+  object-fit: cover;
 }
 .animated-text-container {
   overflow: hidden;
@@ -749,6 +762,9 @@ header {
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
+}
+.after_responsive {
+  display: none;
 }
 .promotion_item_title {
   display: flex;
@@ -1768,13 +1784,13 @@ footer .line {
   line-height: 192px;
   letter-spacing: 0.02em;
 }
-.right_to_right {
-  animation: RightToRight 5s infinite linear;
+.left_to_right {
+  animation: leftToRight 5s infinite linear;
 }
 .right_to_left {
   animation: RightToLeft 5s infinite linear;
 }
-@keyframes RightToRight {
+@keyframes leftToRight {
   from {
     transform: translateX(-50%);
   }
@@ -1800,4 +1816,61 @@ footer .line {
 .fadeInUp {
   opacity: 1;
   transform: translateY(0);
+}
+.after480 {
+  display: none;
+}
+.inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 180px;
+}
+.wrapper {
+  position: absolute;
+  display: flex;
+}
+.wrapper.toRight section {
+  display: flex;
+  animation: swipe var(--speed) linear infinite backwards;
+}
+.wrapper.toLeft section {
+  display: flex;
+  animation: swipe1 var(--speed) linear infinite backwards;
+}
+.wrapper p {
+  width: max-content;
+  font-family: "Gilroy";
+  font-size: 148px;
+  font-weight: 500;
+  line-height: 192px;
+  letter-spacing: 0.02em;
+  padding-left: 80px;
+}
+.wrapper p:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  right: -45px;
+  width: 20px;
+  height: 20px;
+  background-color: #111111;
+  border-radius: 50px;
+}
+@keyframes swipe {
+  0% {
+    transform: translate(0);
+  }
+
+  100% {
+    transform: translate(-100%);
+  }
+}
+@keyframes swipe1 {
+  0% {
+    transform: translate(-100%);
+  }
+  100% {
+    transform: translate(0);
+  }
 }

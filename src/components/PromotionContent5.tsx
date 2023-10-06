@@ -9,6 +9,9 @@ function PromotionContent5() {
         exit={{ opacity: 0, x: -20 }}
         className="promotion_content"
       >
+        <h3 className="after_responsive">
+          Система скидок для коммерческих проектов.
+        </h3>
         <p>
           При единоразовой оплате депозита на 20 часов — стоимость аренды зала
           1000₽/час, то есть 20 000₽.

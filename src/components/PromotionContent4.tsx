@@ -9,6 +9,10 @@ function PromotionContent4() {
         exit={{ opacity: 0, x: -20 }}
         className="promotion_content"
       >
+        <h3 className="after_responsive">
+          Система лояльности фотографам/видеографам, сотрудничающим с
+          маркетплейсами и любыми коммерческими организациями.
+        </h3>
         <p>10% кэшбэк «коммерция».</p>
         <p>Подробности уточняйте у администратора.</p>
       </motion.div>

@@ -27,6 +27,19 @@ const PromotionItem: React.FC<PromotionItemProps> = ({
   };
   return (
     <div className="promotion_item">
+      {index == 0 ? (
+        <div className="after480">
+          <p>для фотографов и видеографов</p>
+          <div className="line"></div>
+        </div>
+      ) : index == 4 ? (
+        <div className="after480">
+          <p>для клиентов</p>
+          <div className="line"></div>
+        </div>
+      ) : (
+        ""
+      )}
       <div onClick={changeIndex} className="promotion_item_title">
         <div className="promotion_item_title_left">
           {item.h2 ? (

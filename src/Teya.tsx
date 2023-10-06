@@ -331,6 +331,9 @@ function Teya() {
                         exit={{ y: -200 }}
                         className="burger_menu"
                       >
+                        <div className="burger_logo">
+                          <img src={footLogo} alt="" />
+                        </div>
                         <ul>
                           <li onClick={() => scrollToSection(hallsRef)}>
                             залы
@@ -344,11 +347,32 @@ function Teya() {
                           <li onClick={() => scrollToSection(comandRef)}>
                             о студии
                           </li>
-                          <li onClick={() => scrollToSection(footerRef)}>
-                            контакты
-                          </li>
                         </ul>
-                        <a href="tel:79873945831">+7 (987) 394-58-31</a>
+                        <div className="burger_info">
+                          <div className="burger_address">
+                            <h2 className="burger_title">Адрес фотостудии</h2>
+                            <p>Нижний Новгород, улица Нестерова, 22</p>
+                            <a href="tel:79873945831">+7 (987) 394-58-31</a>
+                          </div>
+                          <div className="how_get_burger">
+                            <h2 className="burger_title">Как добраться</h2>
+                            <p>
+                              В навигаторе набирайте Тейя, приведет с нужной
+                              стороны, с Большой Печерской. Ориентир ресторан
+                              АМО, мы их соседи.
+                            </p>
+                            <p>
+                              Если забьете ул. Нестерова, д.22, то приведет с
+                              другой стороны. Придется обходить дом.
+                            </p>
+                          </div>
+                        </div>
+                        <div className="burder_socials">
+                          <a href="#">telegram</a>
+                          <a href="#">вконтакте</a>
+                          <a href="#">instagram</a>
+                        </div>
+                        {/* <a href="tel:79873945831">+7 (987) 394-58-31</a> */}
                         <FaXmark onClick={() => setBurger(false)} />
                       </motion.div>
                     </AnimatePresence>
@@ -362,6 +386,7 @@ function Teya() {
                 </div>
                 <button className="book_btn_white">
                   забронировать <img src={arrow} alt="" />
+                  <div className="overlay"></div>
                 </button>
               </div>
             </div>
@@ -376,32 +401,32 @@ function Teya() {
             оборудованием
           </p>
         </div>
-        <div className="line"></div>
+        <div className="line line_padding"></div>
         <div className="hall_hero">
           <HallTextContent />
           <HallSlider arr={imgArr} />
         </div>
-        <div className="line"></div>
+        <div className="line line_padding"></div>
         <div className="hall_hero hall_hero_reverse">
           <HallTextRain />
           <HallSlider arr={imgArr2} />
         </div>
-        <div className="line"></div>
+        <div className="line line_padding"></div>
         <div className="hall_hero">
           <HallTextCikloma />
           <HallSlider arr={imgArr3} />
         </div>
-        <div className="line"></div>
+        <div className="line line_padding"></div>
         <div className="hall_hero hall_hero_reverse">
           <HallTextInteryer />
           <HallSlider arr={imgArr4} />
         </div>
-        <div className="line"></div>
+        <div className="line line_padding"></div>
         <div className="hall_hero">
           <HallTextLoft />
           <HallSlider arr={imgArr5} />
         </div>
-        <div className="line"></div>
+        <div className="line line_padding"></div>
       </div>
       <div className="other_bg">
         <div className="container">
@@ -580,7 +605,7 @@ function Teya() {
             <p>для клиентов</p>
           </div>
           <div className="promotion_right">
-            <div className="line"></div>
+            <div className="line till480"></div>
             <div className="promotion_acc">
               {items.map((item, i) => {
                 return (
