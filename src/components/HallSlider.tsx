@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 type HallSliderType = {
   arr: string[];
 };
@@ -11,18 +12,21 @@ const HallSlider: React.FC<HallSliderType> = ({ arr }) => {
     setCurrentImg(src);
   };
   return (
-    <div className="hall_slider">
-      <div className="main_img">
-        <img loading="lazy" src={currentImg} alt="" />
+    <>
+      <div className="hall_slider">
+        <div className="main_img">
+          <img loading="lazy" src={currentImg} alt="" />
+        </div>
+        <div className="other_images">
+          {arr.map((a, b) => {
+            return (
+              <img loading="lazy" src={a} key={b} onClick={changeImg} alt="" />
+            );
+          })}
+        </div>
       </div>
-      <div className="other_images">
-        {arr.map((a, b) => {
-          return (
-            <img loading="lazy" src={a} key={b} onClick={changeImg} alt="" />
-          );
-        })}
-      </div>
-    </div>
+
+    </>
   );
 };
 

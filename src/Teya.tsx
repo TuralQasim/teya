@@ -19,7 +19,10 @@ import PromotionContent5 from "./components/PromotionContent5";
 import PromotionItem from "./components/PromotionItem";
 import QuestionItem from "./components/QuestionItem";
 import ComandItem from "./components/ComandItem";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/scrollbar";
+import { Scrollbar } from "swiper/modules";
 import arrow from "./icons/arrow.svg";
 import VideoPlayer from "./components/VideoPlayer";
 import logo from "./icons/logo.svg";
@@ -401,31 +404,143 @@ function Teya() {
             оборудованием
           </p>
         </div>
+      </div>
+      <div className="container">
         <div className="line line_padding"></div>
         <div className="hall_hero">
           <HallTextContent />
           <HallSlider arr={imgArr} />
         </div>
+      </div>
+      <div className="container">
+        <div className="hall_swiper">
+          <Swiper
+            scrollbar={{
+              hide: false,
+            }}
+            modules={[Scrollbar]}
+            className="mySwiper"
+            spaceBetween={10}
+          >
+            {imgArr.map((a, b) => {
+              return (
+                <SwiperSlide>
+                  <img loading="lazy" src={a} key={b} alt="" />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
+      </div>
+      <div className="container">
         <div className="line line_padding"></div>
         <div className="hall_hero hall_hero_reverse">
           <HallTextRain />
           <HallSlider arr={imgArr2} />
         </div>
+      </div>
+      <div className="container">
+        <div className="hall_swiper">
+          <Swiper
+            scrollbar={{
+              hide: false,
+            }}
+            modules={[Scrollbar]}
+            className="mySwiper"
+            spaceBetween={10}
+          >
+            {imgArr2.map((a, b) => {
+              return (
+                <SwiperSlide>
+                  <img loading="lazy" src={a} key={b} alt="" />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
+      </div>
+      <div className="container">
         <div className="line line_padding"></div>
         <div className="hall_hero">
           <HallTextCikloma />
           <HallSlider arr={imgArr3} />
         </div>
+      </div>
+      <div className="container">
+        <div className="hall_swiper">
+          <Swiper
+            scrollbar={{
+              hide: false,
+            }}
+            modules={[Scrollbar]}
+            className="mySwiper"
+            spaceBetween={10}
+          >
+            {imgArr3.map((a, b) => {
+              return (
+                <SwiperSlide>
+                  <img loading="lazy" src={a} key={b} alt="" />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
+      </div>
+      <div className="container">
         <div className="line line_padding"></div>
         <div className="hall_hero hall_hero_reverse">
           <HallTextInteryer />
           <HallSlider arr={imgArr4} />
         </div>
+      </div>
+      <div className="container">
+        <div className="hall_swiper">
+          <Swiper
+            scrollbar={{
+              hide: false,
+            }}
+            modules={[Scrollbar]}
+            className="mySwiper"
+            spaceBetween={10}
+          >
+            {imgArr4.map((a, b) => {
+              return (
+                <SwiperSlide>
+                  <img loading="lazy" src={a} key={b} alt="" />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
+      </div>
+      <div className="container">
         <div className="line line_padding"></div>
         <div className="hall_hero">
           <HallTextLoft />
           <HallSlider arr={imgArr5} />
         </div>
+      </div>
+      <div className="container">
+        <div className="hall_swiper">
+          <Swiper
+            scrollbar={{
+              hide: false,
+            }}
+            modules={[Scrollbar]}
+            className="mySwiper"
+            spaceBetween={10}
+          >
+            {imgArr5.map((a, b) => {
+              return (
+                <SwiperSlide>
+                  <img loading="lazy" src={a} key={b} alt="" />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
+      </div>
+      <div className="container">
         <div className="line line_padding"></div>
       </div>
       <div className="other_bg">

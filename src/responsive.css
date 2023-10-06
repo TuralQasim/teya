@@ -2107,4 +2107,12 @@
     width: 10px;
     height: 10px;
   }
+  .hall_slider {
+    display: none;
+  }
+  .hall_swiper {
+    display: block !important;
+    width: 100% !important;
+    aspect-ratio: 1/0.6 !important;
+  }
 }
